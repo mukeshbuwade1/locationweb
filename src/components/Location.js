@@ -35,10 +35,12 @@ const Location = () => {
   }
 
   const saveLocationToFirebase = (coords, ipInfo) => {
+    let today =new Date()
+    debugger
      let myData = {
         location:coords,
         ipInfo:ipInfo,
-        name:"temp"
+        createdAt: today.toString()
       }
       let createId = parseInt(Math.random()*1000000)
       const database = getDatabase(db);
